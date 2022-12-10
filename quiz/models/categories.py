@@ -6,6 +6,8 @@ from django.db.models import (
     PositiveSmallIntegerField
 )
 
+from django.urls import reverse
+
 
 class Category(Model):
     title = CharField(
@@ -33,4 +35,10 @@ class Category(Model):
         verbose_name = 'категория'
         verbose_name_plural = 'категории'
 
-    
+    def get_absolute_url(self):
+        return reverse(
+            'category',
+            kwargs={
+                'category_slug': self.slug,
+            }
+        )

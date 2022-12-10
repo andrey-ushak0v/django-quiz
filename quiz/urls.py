@@ -5,8 +5,6 @@ from quiz.views.quiz import quiz_view
 
 urlpatterns = [
     path('', index_view, name='index'),
-    path('<slug:cat>/', category_view, name='category'),
-    path('<slug:cat>/<slug:quiz>/', quiz_view, name='quiz'),
-
-    
+    path('<slug:category_slug>/', category_view, name='category'),
+    path('<slug:category_slug>/<slug:quiz_slug>/', quiz_view, name='quiz'),
 ]

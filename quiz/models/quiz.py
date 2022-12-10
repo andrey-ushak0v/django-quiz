@@ -9,6 +9,8 @@ from django.db.models import (
     DateTimeField,
     PositiveSmallIntegerField
 )
+from django.urls import reverse
+
 from account.models.accounts import Account
 from quiz.models.categories import Category
 
@@ -63,6 +65,15 @@ class Quiz(Model):
         unique_together = (
             'slug',
             'category',
+        )
+
+    def get_absolute_url(self):
+        return reverse(
+            'quiz',
+            kwargs={
+                'quiz_slug': self.slug,
+                'category_slug': self.category.slug,
+            }
         )
 
     
