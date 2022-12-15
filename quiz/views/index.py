@@ -1,5 +1,7 @@
 from django.shortcuts import render
+
 from quiz.models.categories import Category
+
 
 def index_view(request):
     categories = Category.objects.all()
@@ -8,4 +10,3 @@ def index_view(request):
         'categories': categories,
     }
     return render(request, 'quiz/index.html', context=context)
-    

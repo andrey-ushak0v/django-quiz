@@ -18,6 +18,12 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
+AUTH_USER_MODEL = 'user.Account'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/users/login/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 # Application definition
 
@@ -29,9 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'account.apps.AccountConfig',
+    'user.apps.AccountConfig',
     'quiz.apps.QuizConfig',
-
 
 ]
 
@@ -121,3 +126,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

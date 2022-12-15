@@ -1,7 +1,5 @@
-from django.contrib.admin import (
-    ModelAdmin,
-    register,
-)
+from django.contrib.admin import ModelAdmin, register
+
 from quiz.models.categories import Category
 
 

@@ -4,7 +4,6 @@ from django.contrib.admin import (
 from quiz.models.answers import Answer
 
 
-
 class AnswerTabularInline(TabularInline):
     model = Answer
     min_num = 2

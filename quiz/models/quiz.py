@@ -1,18 +1,11 @@
-from django.db.models import (
-    Model,
-    PROTECT,
-    CharField,
-    TextField,
-    SlugField,
-    BooleanField,
-    ForeignKey,
-    DateTimeField,
-    PositiveSmallIntegerField
-)
+from django.db.models import (PROTECT, BooleanField, CharField, DateTimeField,
+                              ForeignKey, Model, PositiveSmallIntegerField,
+                              SlugField, TextField)
 from django.urls import reverse
 
-from account.models.accounts import Account
 from quiz.models.categories import Category
+from user.models import Account
+
 
 class Quiz(Model):
     author = ForeignKey(
@@ -49,7 +42,7 @@ class Quiz(Model):
     mod_date = DateTimeField(
         'изменен',
         auto_now=True
-    )        
+    )
     sort = PositiveSmallIntegerField(
         'сортировка',
         default=0,
@@ -75,5 +68,3 @@ class Quiz(Model):
                 'category_slug': self.category.slug,
             }
         )
-
-    

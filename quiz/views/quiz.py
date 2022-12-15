@@ -1,9 +1,5 @@
+from django.shortcuts import get_object_or_404, render
 from django.utils.safestring import SafeString
-from django.shortcuts import (
-    render,
-    get_object_or_404,
-)
-
 
 from quiz.models import Quiz
 
@@ -23,8 +19,8 @@ def quiz_view(request, category_slug, quiz_slug):
     for question in questions:
         _html = f'{question.question}</h2>'
         _html += f'<p style="margin-top:-8px; line-height:1.4">' \
-                f'{question.full_text}' \
-                f'</p>' if question.full_text else ''
+                 f'{question.full_text}' \
+                 f'</p>' if question.full_text else ''
         _html += '<h2>'
 
         question_data = {

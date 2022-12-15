@@ -1,6 +1,7 @@
 from django.urls import path
-from quiz.views.index import index_view
+
 from quiz.views.categories import category_view
+from quiz.views.index import index_view
 from quiz.views.quiz import quiz_view
 
 urlpatterns = [

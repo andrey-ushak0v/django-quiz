@@ -1,12 +1,6 @@
-from django.shortcuts import (
-    render,
-    get_object_or_404,
-)
+from django.shortcuts import get_object_or_404, render
 
-from quiz.models import (
-    Category,
-    Quiz,
-)
+from quiz.models import Category, Quiz
 
 
 def category_view(request, category_slug):

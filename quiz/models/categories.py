@@ -1,11 +1,5 @@
-from django.db.models import (
-    Model,
-    CharField,
-    TextField,
-    SlugField,
-    PositiveSmallIntegerField
-)
-
+from django.db.models import (CharField, Model, PositiveSmallIntegerField,
+                              SlugField, TextField)
 from django.urls import reverse
 
 
@@ -19,7 +13,7 @@ class Category(Model):
         unique=True,
     )
     description = TextField(
-        'описание', 
+        'описание',
         blank=True,
     )
     sort = PositiveSmallIntegerField(

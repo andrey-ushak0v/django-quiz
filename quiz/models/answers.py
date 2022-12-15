@@ -1,12 +1,8 @@
-from django.db.models import (
-    Model,
-    CASCADE,
-    CharField,
-    BooleanField,
-    TextField,
-    ForeignKey,
-)
+from django.db.models import (CASCADE, BooleanField, CharField, ForeignKey,
+                              Model,)
+
 from quiz.models.questions import Question
+
 
 class Answer(Model):
     answer = CharField(
@@ -20,12 +16,12 @@ class Answer(Model):
     question = ForeignKey(
         Question,
         on_delete=CASCADE,
-        verbose_name='вопрос'   
+        verbose_name='вопрос'
     )
 
     def __str__(self):
         return self.answer
-    
+
     class Meta:
         db_table = 'answers'
         verbose_name = 'ответ'

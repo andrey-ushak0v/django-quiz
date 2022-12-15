@@ -1,11 +1,7 @@
-from django.db.models import (
-    Model,
-    CASCADE,
-    CharField,
-    TextField,
-    ForeignKey,
-)
+from django.db.models import CASCADE, CharField, ForeignKey, Model, TextField
+
 from quiz.models.quiz import Quiz
+
 
 class Question(Model):
     question = CharField(
