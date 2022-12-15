@@ -5,7 +5,7 @@
 
 1) склонируйте репозиторий на локальный компьютер
 
-```git clone```
+```git clone https://github.com/andrey-ushak0v/django-quiz.git```
 
 2) создайте и активируйте виртуальное окружение
 
